@@ -1,0 +1,15 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: sandbox-flux
+  namespace: flux-system
+spec:
+  interval: 5m0s
+  path: ./overlays/sandbox-flux
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: sandbox-flux
+  targetNamespace: default
+
