@@ -16,7 +16,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: https-credentials
-  namespace: default
+  namespace: flux-system
 type: Opaque
 data:
   username: bWFydGluZGFua28K
