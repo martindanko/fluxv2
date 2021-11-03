@@ -1,0 +1,23 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: sandbox-flux
+  namespace: flux-system
+spec:
+  interval: 30s
+  ref:
+    branch: main
+  url: https://github.com/martindanko/k8s
+  secretRef:
+    name: https-credentials
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: https-credentials
+  namespace: default
+type: Opaque
+data:
+  username: bWFydGluZGFua28=
+  password: Z2hwX3RMc3BmWk9FSHMyejJuSThnMVBtaTNOeVBNd0twVDM3NW9Kbw==

@@ -1,0 +1,15 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: linkerd-w3w-digitalocean
+  namespace: flux-system
+spec:
+  interval: 5m0s
+  path: ./overlays/linkerd-w3w-digitalocean
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: sandbox-flux
+  targetNamespace: default
+
